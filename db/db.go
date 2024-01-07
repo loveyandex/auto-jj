@@ -11,7 +11,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-const DBName = "your-db"
+const DBName = "job-db"
 
 //GetMongoDbConnection get connection of mongodb
 var Client, err = GetMongoDbConnection()

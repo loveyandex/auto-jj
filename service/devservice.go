@@ -18,7 +18,7 @@ func NewJVPostSrv() *JVPostSrv {
 
 func (receiver *JVPostSrv) GetByjobIf(jid int) (*model.JobPosts, error) {
 	var j model.JobPosts
-	query:=bson.M{"ID":jid}
+	query:=bson.M{"id":jid}
 
 	err := mongoCtx.GetByQuery(query, receiver.CmnSrv.Xcol, &j)
 
