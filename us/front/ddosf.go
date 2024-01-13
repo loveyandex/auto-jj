@@ -23,8 +23,7 @@ func main() {
 
 			}
 		}()
-	}
-	fmt.Printf("\"ppp\": %v\n", "ppp")
+	} 
 
 	<-intChan
 
@@ -41,16 +40,7 @@ func Send2(ij int) {
 	req.Header.Set("Accept", "application/json, text/plain, */*")
  	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
-	resp, _ := client.Do(req)
-	if resp!=nil {
-
-		
-		fmt.Printf("resp.Status: %v\n", resp.Status)
-	}else {
-		fmt.Printf("resp: %v\n", resp)
-	}
-
-
-	_ = resp
+	  client.Do(req)
+	 
 
 }

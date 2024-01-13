@@ -44,16 +44,7 @@ func Send2(ij int) {
 	req.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiNjAwZjU0MS02MDA0LTQzYWQtOTMyMC03ODNkZGQwNGU0MDIiLCJleHAiOjE5NzAxNDQ4MTUzfQ.4CTrQ7bDQmOq6p-WglCwfQii4fgUsC04D5eYoDpQoW4")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
-	resp, _ := client.Do(req)
-	if resp!=nil {
-
-		
-		fmt.Printf("resp.Status: %v\n", resp.Status)
-	}else {
-		fmt.Printf("resp: %v\n", resp)
-	}
-
-
-	_ = resp
+	  client.Do(req)
+ 
 
 }
