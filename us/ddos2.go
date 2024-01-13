@@ -35,7 +35,6 @@ func Send2(ij int) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", "http://156.253.5.224/stat/us", nil)
 	if err != nil {
-		fmt.Printf("err: %v\n", err)
 
 	}
 	req.Header.Set("Accept", "application/json, text/plain, */*")
