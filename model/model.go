@@ -1,7 +1,5 @@
 package model
-
-
-import "time"
+ 
 
 type JobsResp struct {
 	TraceID    any    `json:"traceId,omitempty"`
@@ -119,22 +117,22 @@ type Gender struct {
 	TitleEn string `json:"titleEn,omitempty"`
 }
 type FirstActivationTime struct {
-	BeautifyFa string    `json:"beautifyFa,omitempty"`
-	BeautifyEn string    `json:"beautifyEn,omitempty"`
-	Date       time.Time `json:"date,omitempty"`
+	BeautifyFa string `json:"beautifyFa,omitempty"`
+	BeautifyEn string `json:"beautifyEn,omitempty"`
+	Date       string `json:"date,omitempty"`
 }
 type ActivationTime struct {
-	PassedDays int       `json:"passedDays,omitempty"`
-	BeautifyFa string    `json:"beautifyFa,omitempty"`
-	BeautifyEn string    `json:"beautifyEn,omitempty"`
-	Date       time.Time `json:"date,omitempty"`
+	PassedDays int    `json:"passedDays,omitempty"`
+	BeautifyFa string `json:"beautifyFa,omitempty"`
+	BeautifyEn string `json:"beautifyEn,omitempty"`
+	Date       string `json:"date,omitempty"`
 }
 type ExpireTime struct {
-	DaysLeftUntil int       `json:"daysLeftUntil,omitempty"`
-	IsExpired     bool      `json:"isExpired,omitempty"`
-	BeautifyFa    string    `json:"beautifyFa,omitempty"`
-	BeautifyEn    string    `json:"beautifyEn,omitempty"`
-	Date          time.Time `json:"date,omitempty"`
+	DaysLeftUntil int    `json:"daysLeftUntil,omitempty"`
+	IsExpired     bool   `json:"isExpired,omitempty"`
+	BeautifyFa    string `json:"beautifyFa,omitempty"`
+	BeautifyEn    string `json:"beautifyEn,omitempty"`
+	Date          string `json:"date,omitempty"`
 }
 type JobPosts struct {
 	Score                     float64             `json:"score,omitempty"`
@@ -183,9 +181,9 @@ type Data struct {
 }
 
 type GetUserJobPostRecommendationResp struct {
-	TraceID    any    `json:"traceId,omitempty"`
-	IsSuccess  bool   `json:"isSuccess,omitempty"`
-	StatusCode int    `json:"statusCode,omitempty"`
-	Message    string `json:"message,omitempty"`
-	Data       []JobPosts  `json:"data,omitempty"`
+	TraceID    any        `json:"traceId,omitempty"`
+	IsSuccess  bool       `json:"isSuccess,omitempty"`
+	StatusCode int        `json:"statusCode,omitempty"`
+	Message    string     `json:"message,omitempty"`
+	Data       []JobPosts `json:"data,omitempty"`
 }

@@ -18,6 +18,10 @@ func main() {
 
 		for i := 0; i < 100; i++ {
 
+			
+
+			
+
 			jr, err := api.GetDeveloperJobs(i)
 
 			if err != nil {
@@ -26,12 +30,70 @@ func main() {
 			}
 
 			if !jr.IsSuccess {
+				continue
 
 			}
 
 			for _, jp := range jr.Data.JobPosts {
 
 				fmt.Printf("jp.Title: %v\n", jp.Title)
+				 
+				if strings.Contains(strings.ToLower(jp.Title), strings.ToLower("Embedded")) {
+					continue
+				} 
+				if strings.Contains(strings.ToLower(jp.Title), strings.ToLower("QA")) {
+					continue
+				}
+
+				if strings.Contains(strings.ToLower(jp.Title), "quality") {
+					continue
+				}
+				
+				if strings.Contains(strings.ToLower(jp.Title), "react native") {
+					continue
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "سئو") {
+					continue
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "سئو") {
+					continue
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "Embedded") {
+					continue
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "Delphi") {
+					continue
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "Angular") {
+					continue
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "سئو") {
+					continue
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "ui-ux") {
+					continue
+
+				}	 
+				if strings.Contains(strings.ToLower(jp.Title), "oracle") {
+					continue
+
+				}	 
+				if strings.Contains(strings.ToLower(jp.Title), "front") {
+					continue
+
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "فرانت") {
+					continue
+
+				}
+				if strings.Contains(strings.ToLower(jp.Title), ".net") {
+					continue
+
+				}
+				if strings.Contains(strings.ToLower(jp.Title), "asp") {
+					continue
+
+				}
 				if strings.Contains(strings.ToLower(jp.Title), "laravel") {
 					continue
 
@@ -46,7 +108,7 @@ func main() {
 				jp2, err4 := js.GetByjobIf(jpid)
 
 				if err4 != nil {
-					fmt.Printf("err4: %v\n", err4)
+					// fmt.Printf("err4: %v\n", err4)
 					if err4.Error() != "mongo: no documents in result" {
 						continue
 
@@ -58,7 +120,12 @@ func main() {
 
 				}
 
-				aj, err3 := api.Apply(jpid)
+				aj,hr, err3 := api.Apply(jpid)
+
+				if hr.StatusCode==401 {
+					fmt.Printf("hr.StatusCode: %v\n", hr.StatusCode)
+					
+				}
 
 				if err3 != nil {
 					fmt.Printf("err3: %v\n", err3)
@@ -75,7 +142,7 @@ func main() {
 					fmt.Printf("i2: %v\n", i2)
 
 				}
-				time.Sleep(5*time.Second)
+				time.Sleep(1*time.Second)
 
 			}
 
